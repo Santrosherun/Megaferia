@@ -4,12 +4,19 @@
  */
 package main;
 
+import core.Megaferia;
+
 /**
  *
  * @author Santiagodd
  */
 public class Main {
     public static void main(String[] args) {
-        System.out.println("Hello World");
+       Megaferia megaferia = new Megaferia();
+       megaferia.createStand(100000);
+       megaferia.createStand(200000);
+       megaferia.createStand(300000);
+       
+       megaferia.verifyStands();
     }
 }

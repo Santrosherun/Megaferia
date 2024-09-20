@@ -16,7 +16,26 @@ public class Editorial {
     private String nit;
     private String nombre;
     private String direccion;
-    private Gerente gerente = new Gerente();
-    private ArrayList<Libro> libros = new ArrayList<>();
-    private ArrayList<Stand> stands = new ArrayList<>();
+    private Gerente gerente;
+    private ArrayList<Libro> libros;
+    private ArrayList<Stand> stands;
+
+    public Editorial(String nit, String nombre, String direccion, Gerente gerente) {
+        this.nit = nit;
+        this.nombre = nombre;
+        this.direccion = direccion;
+        this.gerente = gerente;
+        this.libros = new ArrayList<>();
+        this.stands = new ArrayList<>();
+        
+        this.gerente.setEditorial(this);
+    }
+    
+    public boolean addLibro(Libro libro){
+        if(!this.libros.contains(libro)){
+            this.libros.add(libro);
+            return true;
+        }
+        return false;
+    }
 }

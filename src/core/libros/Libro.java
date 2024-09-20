@@ -9,15 +9,32 @@ import core.persona.Autor;
 import java.util.ArrayList;
 
 /**
- *
+ *m
  * @author Santiagodd
  */
 public abstract class Libro {
     protected String titulo;  
-    protected ArrayList<Autor> autores = new ArrayList<>();
+    protected ArrayList<Autor> autores;
     protected String isbn;  
     protected String genero;  
     protected String formato;
     protected float valor;
-    protected ArrayList<Editorial> editoriales = new ArrayList<>();
+    protected Editorial editorial;
+
+    public Libro(String titulo, ArrayList<Autor> autores, String isbn, String genero, String formato, float valor, Editorial editorial) {
+        this.titulo = titulo;
+        this.autores = autores;
+        this.isbn = isbn;
+        this.genero = genero;
+        this.formato = formato;
+        this.valor = valor;
+        this.editorial = editorial;
+        
+        for (Autor autor : this.autores){
+            autor.addLibro(this);
+        }
+        this.editorial.addLibro(this);
+    }
+
+    
 }

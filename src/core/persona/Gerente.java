@@ -11,5 +11,17 @@ import core.Editorial;
  * @author Santiagodd
  */
 public class Gerente extends Persona {
-    private Editorial editorial = new Editorial();
+    private Editorial editorial;
+
+    public Gerente(Editorial editorial, String nombre, int cedula) {
+        super(nombre, cedula);
+        this.editorial = null;
+        
+    }
+
+    public void setEditorial(Editorial editorial) {
+        this.editorial = editorial;
+    }
+    
+    
 }
