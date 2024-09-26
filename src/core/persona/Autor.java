@@ -14,7 +14,7 @@ import java.util.ArrayList;
 public class Autor extends Persona{
     private ArrayList<Libro> libros;
 
-    public Autor(ArrayList<Libro> libros, String nombre, int cedula) {
+    public Autor(String nombre, int cedula) {
         super(nombre, cedula);
         this.libros = new ArrayList<>();
     }
@@ -28,4 +28,9 @@ public class Autor extends Persona{
         }
         return false;
     }
+
+    public ArrayList<Libro> getLibros() {
+        return libros;
+    }
+    
 }
